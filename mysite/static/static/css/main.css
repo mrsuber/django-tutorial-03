@@ -1728,7 +1728,7 @@ textarea {
     border: 0;
     color: #696763;
     padding: 5px;
-    width: 25%;
+    width: 97%;
     border-radius: 0;
     resize: none
 }
@@ -1754,6 +1754,26 @@ textarea {
 .update {
     margin-left: 40px;
 }
+
+
+.chose_area .update2 {
+    margin-left: 40px;
+}
+.update2,
+.check_out {
+    background: #FE980F;
+    border-radius: 0;
+    color: #FFFFFF;
+    margin-top: 0px;
+    border: none;
+    padding: 5px 15px;
+}
+
+.update2 {
+    margin-left: 40px;
+}
+
+
 
 .check_out {
     margin-left: 20px
