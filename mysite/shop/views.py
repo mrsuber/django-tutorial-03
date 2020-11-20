@@ -5,6 +5,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 
+def home(request, category_slug=None):
+
+	return render(request, 'shop/product/real_list.html')
+
 
 
 

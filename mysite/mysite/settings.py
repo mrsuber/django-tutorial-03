@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
+    'accounts',
     'shop',
     'cart',
     'orders',
@@ -132,3 +134,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
 CART_SESSION_ID = 'keranjang'
+
+
+
+
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/shop/'
+LOGIN_URL = 'login'
+# setting up email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
