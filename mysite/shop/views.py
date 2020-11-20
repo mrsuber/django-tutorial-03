@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
 
-
-
+@login_required
 def home(request, category_slug=None):
 
 	return render(request, 'shop/product/real_list.html')
@@ -51,7 +51,7 @@ def product_list(request, category_slug=None):
 	}
 	return render(request, 'shop/product/list.html', context)
 
-
+@login_required
 def product_detail(request, id, slug):
 	product = get_object_or_404(Product, id=id, slug=slug, available=True)
 	cart_product_form = CartAddProductForm()
