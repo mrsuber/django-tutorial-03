@@ -164,95 +164,28 @@
 			<div class="col-sm-9 padding-right">
 				<div class="features_items"><!--features_items-->
 					<h2 class="title text-center">Features Items</h2>
-					<div class="col-sm-4">
-						<div class="product-image-wrapper">
-							<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{% static 'static/images/home/product1.jpg' %}" alt="" />
-										<h2>CFA56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>CFA56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-							</div>
-							<div class="choose">
-								<ul class="nav nav-pills nav-justified">
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+
+
+
+
+
+
+
+					{% for product in product_list2 %}
 					<div class="col-sm-4">
 						<div class="product-image-wrapper">
 							<div class="single-products">
 								<div class="productinfo text-center">
-									<img src="{% static 'static/images/home/product2.jpg' %}" alt="" />
-									<h2>CFA56</h2>
-									<p>Easy Polo Black Edition</p>
+									<img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt=".." style="height: 286px; width: auto"/>
+									<h2>CFA {{ product.price }}</h2>
+									<p>{{ product.name }}</p>
 									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 								</div>
 								<div class="product-overlay">
 									<div class="overlay-content">
-										<h2>CFA56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-							<div class="choose">
-								<ul class="nav nav-pills nav-justified">
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="product-image-wrapper">
-							<div class="single-products">
-								<div class="productinfo text-center">
-									<img src="{% static 'static/images/home/product3.jpg' %}" alt="" />
-									<h2>CFA56</h2>
-									<p>Easy Polo Black Edition</p>
-									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-								</div>
-								<div class="product-overlay">
-									<div class="overlay-content">
-										<h2>CFA56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-							<div class="choose">
-								<ul class="nav nav-pills nav-justified">
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="product-image-wrapper">
-							<div class="single-products">
-								<div class="productinfo text-center">
-									<img src="{% static 'static/images/home/product4.jpg' %}" alt="" />
-									<h2>CFA56</h2>
-									<p>Easy Polo Black Edition</p>
-									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-								</div>
-								<div class="product-overlay">
-									<div class="overlay-content">
-										<h2>CFA56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<h2>{{ product.price }}</h2>
+										<p>{{ product.name }}</p>
+										<a href="{{ product.get_absolute_url }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 								</div>
 								<img src="{% static 'static/images/home/new.png' %}" class="new" alt="" />
@@ -265,20 +198,26 @@
 							</div>
 						</div>
 					</div>
+{% endfor %}
+
+
+
+
+					{% for product in product_list3 %}
 					<div class="col-sm-4">
 						<div class="product-image-wrapper">
 							<div class="single-products">
 								<div class="productinfo text-center">
-									<img src="{% static 'static/images/home/product5.jpg' %}" alt="" />
-									<h2>CFA56</h2>
-									<p>Easy Polo Black Edition</p>
+									<img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt=".." style="height: 286px; width: auto"/>
+									<h2>CFA {{ product.price }}</h2>
+									<p>{{ product.name }}</p>
 									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 								</div>
 								<div class="product-overlay">
 									<div class="overlay-content">
-										<h2>CFA56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<h2>{{ product.price }}</h2>
+										<p>{{ product.name }}</p>
+										<a href="{{ product.get_absolute_url }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 								</div>
 								<img src="{% static 'static/images/home/sale.png' %}" class="new" alt="" />
@@ -291,33 +230,21 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4">
-						<div class="product-image-wrapper">
-							<div class="single-products">
-								<div class="productinfo text-center">
-									<img src="{% static 'static/images/home/product6.jpg' %}" alt="" />
-									<h2>CFA56</h2>
-									<p>Easy Polo Black Edition</p>
-									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-								</div>
-								<div class="product-overlay">
-									<div class="overlay-content">
-										<h2>CFA56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-							<div class="choose">
-								<ul class="nav nav-pills nav-justified">
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
 
 				</div><!--features_items-->
+
+
 
 				<div class="category-tab"><!--category-tab-->
 
@@ -365,7 +292,9 @@
 
 					</div>
 				</div><!--/category-tab-->
-
+				<div class="nav nav-tabs">
+				<a  class="btn btn-primary" href="">More</a>
+				</div>
 				{% if product_list.has_other_pages %}
 				<ul class="pagination">
 				{% if product_list.has_previous %}
@@ -401,88 +330,46 @@
 
 					<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
-							
+
 							<div class="item active">
+								{% for product in product_list4 %}
 								<div class="col-sm-4">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="{% static 'static/images/home/recommend1.jpg' %}" alt="" />
-												<h2>CFA56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt=".." style="height: 202px; width: auto" />
+												<h2>CFA {{ product.price }}</h2>
+												<p>{{ product.name }}</p>
+												<a href="{{ product.get_absolute_url }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="{% static 'static/images/home/recommend2.jpg' %}" alt="" />
-												<h2>CFA56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+								{% endfor %}
 
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="{% static 'static/images/home/recommend3.jpg' %}" alt="" />
-												<h2>CFA56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
 
-										</div>
-									</div>
-								</div>
 							</div>
+
+
 							<div class="item">
+
+								{% for product in product_list4 %}
 								<div class="col-sm-4">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="{% static 'static/images/home/recommend1.jpg' %}" alt="" />
-												<h2>CFA56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt=".." style="height: 202px; width: auto" />
+												<h2>CFA {{ product.price }}</h2>
+												<p>{{ product.name }}</p>
+												<a href="{{ product.get_absolute_url }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="{% static 'static/images/home/recommend2.jpg' %}" alt="" />
-												<h2>CFA56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+								{% endfor %}
 
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="{% static 'static/images/home/recommend3.jpg' %}" alt="" />
-												<h2>CFA56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 						 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
