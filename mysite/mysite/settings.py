@@ -37,7 +37,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 #     'default': dj_database_url.config(
 #         default=config('DATABASE_URL')
 #     )
-}
+# }
 
 # ALLOWED_HOSTS = []
 
